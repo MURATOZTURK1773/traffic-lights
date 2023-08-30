@@ -83,7 +83,3 @@ main {
 .yellow {
   background-color: yellow;
 }
-
-.active {
-  background-color: var(--active-color);
-}
