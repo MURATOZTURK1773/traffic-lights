@@ -1,22 +1,26 @@
-import { Component } from 'react';
+import { Component } from "react";
 
 interface ClassTrafficLightState {
   currentColor: string;
 }
 
-export class ClassTrafficLight extends Component<object, ClassTrafficLightState> {
-  colors: string[] = ['red', 'green', 'yellow'];
+export class ClassTrafficLight extends Component<
+  object,
+  ClassTrafficLightState
+> {
+  colors: string[] = ["red", "green", "yellow"];
 
   constructor(props: object) {
     super(props);
     this.state = {
-      currentColor: 'red'
+      currentColor: "red",
     };
   }
 
   handleNextState = () => {
     const { currentColor } = this.state;
-    const nextColorIndex = (this.colors.indexOf(currentColor) + 1) % this.colors.length;
+    const nextColorIndex =
+      (this.colors.indexOf(currentColor) + 1) % this.colors.length;
     const nextColor = this.colors[nextColorIndex];
     this.setState({ currentColor: nextColor });
   };
@@ -28,11 +32,28 @@ export class ClassTrafficLight extends Component<object, ClassTrafficLightState>
       <div className="traffic-light-box">
         <h2>Class Traffic Light</h2>
         <div className="traffic-light">
-          <div className={`circle red ${currentColor === 'red' ? 'active' : ''}`} style={{ backgroundColor: currentColor === 'red' ? 'red' : 'black' }}></div>
-          <div className={`circle yellow ${currentColor === 'yellow' ? 'active' : ''}`} style={{ backgroundColor: currentColor === 'yellow' ? 'yellow' : 'black' }}></div>
-          <div className={`circle green ${currentColor === 'green' ? 'active' : ''}`} style={{ backgroundColor: currentColor === 'green' ? 'green' : 'black' }}></div>
+          <div
+            className="circle red"
+            style={{
+              backgroundColor: currentColor === "red" ? "red" : "black",
+            }}
+          ></div>
+          <div
+            className="circle yellow"
+            style={{
+              backgroundColor: currentColor === "yellow" ? "yellow" : "black",
+            }}
+          ></div>
+          <div
+            className="circle green"
+            style={{
+              backgroundColor: currentColor === "green" ? "green" : "black",
+            }}
+          ></div>
         </div>
-        <button className="next-state-button" onClick={this.handleNextState}>Next State</button>
+        <button className="next-state-button" onClick={this.handleNextState}>
+          Next State
+        </button>
       </div>
     );
   }

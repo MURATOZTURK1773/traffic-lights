@@ -10,23 +10,31 @@ export const FunctionalTrafficLight = () => {
   const handleNextState = () => {
     setCurrentColor(nextColor);
   };
-  //I intentionally did not format the return part with prettier, i think it makes it more complicated fyi.
+
   return (
     <div className="traffic-light-box">
       <h2>Functional Traffic Light</h2>
       <div className="traffic-light">
-        <div className={`circle red ${currentColor === 'red' ? 'active' : 'black'}`} style={{ backgroundColor: currentColor === 'red' ? 'red' : 'black' }}></div>
-        <div className={`circle yellow ${currentColor === 'yellow' ? 'active' : 'black'}`} style={{ backgroundColor: currentColor === 'yellow' ? 'yellow' : 'black' }}></div>
-        <div className={`circle green ${currentColor === 'green' ? 'active' : 'black'}`} style={{ backgroundColor: currentColor === 'green' ? 'green' : 'black' }}></div>
+        <div
+          className="circle red"
+          style={{ backgroundColor: currentColor === "red" ? "red" : "black" }}
+        ></div>
+        <div
+          className="circle yellow"
+          style={{
+            backgroundColor: currentColor === "yellow" ? "yellow" : "black",
+          }}
+        ></div>
+        <div
+          className="circle green"
+          style={{
+            backgroundColor: currentColor === "green" ? "green" : "black",
+          }}
+        ></div>
       </div>
-      <button className="next-state-button" onClick={handleNextState}>Next State</button>
+      <button className="next-state-button" onClick={handleNextState}>
+        Next State
+      </button>
     </div>
   );
-
-
 };
-
-
-
-
-
