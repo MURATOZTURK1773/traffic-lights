@@ -46,7 +46,7 @@ main {
 .traffic-light {
   height: 500px;
   width: 200px;
-  background-color: #f5d81b;
+  background-color: black;
   border: 5px solid black;
   display: flex;
   flex-direction: column;
@@ -59,6 +59,7 @@ main {
   width: 120px;
   border-radius: 100%;
   border: 3px solid black;
+
 }
 
 .next-state-button {
@@ -81,4 +82,8 @@ main {
 
 .yellow {
   background-color: yellow;
+}
+
+.active {
+  background-color: var(--active-color);
 }
